@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "com.unity.entities": "0.0.12-preview.6",
+    "com.unity.ads": "exclude",
+    "com.unity.analytics": "exclude",
+    "com.unity.standardevents": "exclude",
+    "com.unity.purchasing": "exclude",
+    "com.unity.package-manager-ui": "1.9.3"
+  },
+  "testables": [
+    "com.unity.collections",
+    "com.unity.entities",
+    "com.unity.jobs"
+  ],
+  "registry": "https://staging-packages.unity.com"
+}

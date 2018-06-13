@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3ee918a2684848bd4be3e88825d28, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  ObjectScale: 0.2
+  CollisionSettingsInstance:
+    PlayerCollisionRadius: 0.2
+    EnemyCollisionRadius: 0.5
+    BulletCollisionRadius: 0.1
+  PlayerCollisionInstance:
+    Radius: 0.2
+  EnemyCollisionInstance:
+    Radius: 0.5
+  BulletCollisionInstance:
+    Radius: 0.1
+  PlayerSettingsInstance:
+    MoveSpeed: 3
+    ShootSettingsInstance:
+      ShotSpeed: 5
+      Lifespan: 3
+      FireCooldown: 0.1
+    LifeSettingsInstance:
+      MaxLife: 100
+      RecoveryAmount: 10
+      DamageAmount: 2
+    MovableAreaInstance:
+      X: -4
+      Y: -7
+      Width: 8
+      Height: 14
+  PlayerCreatePosition: {x: 0, y: 0}
+  PlayerColorSettingsInstance:
+    PlayerNormalColor: {r: 1, g: 1, b: 1, a: 1}
+    PlayerDamagedColor: {r: 1, g: 0, b: 0, a: 1}
+  EnemySpawnSystemSettingsInstance:
+    CooldownTime: 0.5
+    LimitFps: 55
+    MaxBarrageType: 0
+    SpawnArea:
+      X: -2.75
+      Y: -3
+      Width: 5.5
+      Height: 8
+  BarrageSettings_DirectionBulletInstance:
+    CommonBarrageSettings:
+      ShotSpeed: 5
+      CooldownTime: 0.1
+      Lifespan: 1.6
+  BarrageSettings_CircularBulletInstance:
+    BulletCount: 128
+    CommonBarrageSettings:
+      ShotSpeed: 5
+      CooldownTime: 0.1
+      Lifespan: 1.6
