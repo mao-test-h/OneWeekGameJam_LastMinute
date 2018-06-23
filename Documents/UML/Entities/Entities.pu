@@ -1,0 +1,59 @@
+@startuml
+skinparam packageStyle node
+
+title Entities
+
+'Player : #Violet
+'Enemy : #Cyan
+'EnemySpawnSystem : #Yellow
+'PlayerBullet : #Orange
+'EnemyBullet : #GreenYellow
+
+package Player #Violet {
+    class artifact1 as "Position2D"
+    class artifact2 as "TransformMatrix"
+    class artifact4 as "PlayerInput"
+    class artifact5 as "PlayerLife"
+    class artifact3 as "MeshInstanceRenderer" #Lime
+    class artifact6 as "PlayerSettings" #Lime
+    class artifact7 as "PlayerCollision" #Lime
+    class artifact8 as "PlayerColor" #Lime
+}
+
+package Enemy #Cyan {
+    class artifact100 as "Position2D"
+    class artifact101 as "TransformMatrix"
+    class artifact103 as "EnemyData"
+    class artifact102 as "MeshInstanceRenderer" #Lime
+    class artifact104 as "EnemyCollision" #Lime
+    class artifact105 as "BarrageSettings_CircularBullet" #Lime
+    class artifact106 as "BarrageSettings_DirectionBullet" #Lime
+}
+
+package PlayerBullet #Orange {
+    class artifact200 as "Position2D"
+    class artifact201 as "TransformMatrix"
+    class artifact203 as "BulletData"
+    class artifact205 as "PlayerBullet"
+    class artifact202 as "MeshInstanceRenderer" #Lime
+    class artifact204 as "BulletCollision" #Lime
+}
+
+package EnemyBullet #GreenYellow {
+    class artifact300 as "Position2D"
+    class artifact301 as "TransformMatrix"
+    class artifact303 as "BulletData"
+    class artifact305 as "EnemyBullet"
+    class artifact302 as "MeshInstanceRenderer" #Lime
+    class artifact304 as "BulletCollision" #Lime
+}
+
+package EnemySpawnSystem #Yellow {
+    class artifact401 as "EnemySpawnSystemSettings" #Lime
+    class artifact400 as "EnemySpawnSystemData"
+}
+
+hide members
+hide circle
+
+@enduml

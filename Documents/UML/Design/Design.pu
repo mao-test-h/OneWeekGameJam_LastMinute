@@ -1,0 +1,36 @@
+@startuml
+skinparam packageStyle node
+
+Title Design
+
+package MonoBehaviour {
+    class MainECS_Manager
+}
+
+package ScriptableObject {
+    class GameSettings
+}
+
+package Entities {
+    class Player #Violet
+    class PlayerBullet #Orange
+
+    class EnemySpawnSystem #Yellow
+    class Enemy #Cyan
+    class EnemyBullet #GreenYellow
+}
+
+MainECS_Manager -left- GameSettings
+
+Player -up-> PlayerBullet : 生成
+EnemySpawnSystem -up-> Enemy : 生成
+Enemy -up-> EnemyBullet : 生成
+
+MainECS_Manager -up-> Player : 生成
+MainECS_Manager -up-> EnemySpawnSystem : 生成
+
+hide members
+hide circle
+
+@enduml
+

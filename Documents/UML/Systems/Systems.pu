@@ -1,0 +1,88 @@
+@startuml
+skinparam packageStyle node
+
+title Systems
+
+'Player : #Violet
+'Enemy : #Cyan
+'EnemySpawnSystem : #Yellow
+'PlayerBullet : #Orange
+'EnemyBullet : #GreenYellow
+
+package PlayerInputSystem {
+    class data1 as "PlayerInput" #Violet
+    class data2 as "PlayerLife" #Violet
+    class data3 as "PlayerSettings" #Violet
+}
+
+package PlayerMoveSystem {
+    class data10 as "Position2D" #Violet
+    class data11 as "PlayerInput" #Violet
+    class data12 as "PlayerSettings" #Violet
+}
+
+package PlayerHitCheckSystem {
+    class data20 as "PlayerLife" #Violet
+    class data21 as "Position2D" #Violet
+    class data22 as "PlayerInput" #Violet
+    class data23 as "PlayerSettings" #Violet
+    class data24 as "PlayerCollision" #Violet
+
+    class data25 as "Position2D" #GreenYellow
+    class data26 as "EnemyBullet" #GreenYellow
+    class data27 as "BulletCollision" #GreenYellow
+}
+
+package PlayerDamageRenderer {
+    class data30 as "PlayerLife" #Violet
+    class data31 as "MeshInstanceRenderer" #Violet
+    class data32 as "PlayerColor" #Violet
+}
+
+package EnemySpawnSystem {
+    class data40 as "EnemySpawnSystemData" #Yellow
+    class data41 as "EnemySpawnSystemSettings" #Yellow
+}
+
+package EnemyHitCheckSystem {
+    class data50 as "Position2D" #Cyan
+    class data51 as "EnemyData" #Cyan
+    class data52 as "EnemyCollision" #Cyan
+
+    class data53 as "Position2D" #Orange
+    class data54 as "PlayerBullet" #Orange
+    class data55 as "BulletCollision" #Orange
+}
+
+package BulletMoveSystem {
+    class data60 as "Position2D" #Orange
+    class data61 as "BulletData" #Orange
+    class data62 as "Position2D" #GreenYellow
+    class data63 as "BulletData" #GreenYellow
+}
+
+package BulletDestroySystem {
+    class data70 as "BulletData" #Orange
+    class data71 as "BulletData" #GreenYellow
+}
+
+package DirectionBullet_BarrageSystem {
+    class data80 as "Position2D" #Cyan
+    class data81 as "EnemyData" #Cyan
+    class data82 as "BarrageSettings_DirectionBullet" #Cyan
+
+    class data83 as "Position2D" #Violet
+    class data84 as "PlayerInput" #Violet
+    class data85 as "PlayerSettings" #Violet
+}
+
+package CircularBullet_BarrageSystem {
+    class data90 as "Position2D" #Cyan
+    class data91 as "EnemyData" #Cyan
+    class data92 as "BarrageSettings_CircularBullet" #Cyan
+}
+
+hide members
+hide circle
+
+@enduml
