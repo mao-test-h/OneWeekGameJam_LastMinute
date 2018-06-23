@@ -263,26 +263,44 @@ namespace MainContents.ECS
                 typeof(PlayerInput),
                 typeof(PlayerLife),
                 typeof(TransformMatrix));
+            // ▼ SharedComponentData      ※SharedComponentDataはArchetypeに登録出来ないので使用される物をメモ
+            // - MeshInstanceRenderer
+            // - PlayerSettings
+            // - PlayerCollision
+            // - PlayerColor
 
             EnemyBulletArchetype = this._entityManager.CreateArchetype(
                 typeof(Position2D),
                 typeof(BulletData),
                 typeof(EnemyBullet),
                 typeof(TransformMatrix));
+            // ▼ SharedComponentData
+            // - MeshInstanceRenderer
+            // - BulletCollision
 
             PlayerBulletArchetype = this._entityManager.CreateArchetype(
                 typeof(Position2D),
                 typeof(BulletData),
                 typeof(PlayerBullet),
                 typeof(TransformMatrix));
+            // ▼ SharedComponentData
+            // - MeshInstanceRenderer
+            // - BulletCollision
 
             EnemySpawnSystemArchetype = this._entityManager.CreateArchetype(
                 typeof(EnemySpawnSystemData));
+            // ▼ SharedComponentData
+            // - EnemySpawnSystemSettings
 
             CommonEnemyArchetype = this._entityManager.CreateArchetype(
                 typeof(Position2D),
                 typeof(EnemyData),
                 typeof(TransformMatrix));
+            // ▼ SharedComponentData
+            // - MeshInstanceRenderer
+            // - EnemyCollision
+            // - [BarrageSettings_DirectionBullet] or [BarrageSettings_CircularBullet]
+            //      →こちらについて、登録するSharedComponentDataによって敵が撃ってくる弾幕が変わる。どちらか片方しか登録されない想定。
 
             // MeshInstanceRenderers Settings
             PlayerLook = this.CreateDokabenMeshInstanceRenderer(this._playerRendererData);
