@@ -303,10 +303,10 @@ namespace MainContents.ECS
             //      →こちらについて、登録するSharedComponentDataによって敵が撃ってくる弾幕が変わる。どちらか片方しか登録されない想定。
 
             // MeshInstanceRenderers Settings
-            PlayerLook = this.CreateDokabenMeshInstanceRenderer(this._playerRendererData);
-            EnemyLook = this.CreateDokabenMeshInstanceRenderer(this._enemyRendererData);
-            PlayerBulletLook = this.CreateDokabenMeshInstanceRenderer(this._playerBulletRendererData);
-            EnemyBulletLook = this.CreateDokabenMeshInstanceRenderer(this._enemyBulletRendererData);
+            PlayerLook = this.CreateMeshInstanceRenderer(this._playerRendererData);
+            EnemyLook = this.CreateMeshInstanceRenderer(this._enemyRendererData);
+            PlayerBulletLook = this.CreateMeshInstanceRenderer(this._playerBulletRendererData);
+            EnemyBulletLook = this.CreateMeshInstanceRenderer(this._enemyBulletRendererData);
 
             // BarrageSettings
             BarrageSettings_DirectionBullet = this._gameSettings.BarrageSettings_DirectionBulletInstance;
@@ -461,7 +461,7 @@ namespace MainContents.ECS
         /// </summary>
         /// <param name="data">表示データ</param>
         /// <returns>生成したMeshInstanceRenderer</returns>
-        MeshInstanceRenderer CreateDokabenMeshInstanceRenderer(MeshInstanceRendererData data)
+        MeshInstanceRenderer CreateMeshInstanceRenderer(MeshInstanceRendererData data)
         {
             // Sprite to Mesh
             var mesh = new Mesh();
